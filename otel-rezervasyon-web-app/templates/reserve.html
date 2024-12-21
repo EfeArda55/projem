@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezervasyon Yap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="container mx-auto max-w-md bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-6 text-center">Rezervasyon Yap</h1>
+
+        <form method="POST" class="space-y-4">
+            <div>
+                <label class="block mb-2">Email</label>
+                <input type="email" name="email" required class="w-full p-2 border rounded">
+            </div>
+            <div>
+                <label class="block mb-2">Giriş Tarihi</label>
+                <input type="date" name="check_in" required class="w-full p-2 border rounded">
+            </div>
+            <div>
+                <label class="block mb-2">Çıkış Tarihi</label>
+                <input type="date" name="check_out" required class="w-full p-2 border rounded">
+            </div>
+            <div>
+                <label class="block mb-2">Oda Sayısı</label>
+                <input type="number" name="room_count" min="1" max="5" required class="w-full p-2 border rounded">
+            </div>
+            <div>
+                <label class="block mb-2">Kapasite</label>
+                <input type="number" name="capacity" min="1" max="4" required class="w-full p-2 border rounded">
+            </div>
+            <button type="submit" class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">
+                Rezervasyon Yap
+            </button>
+            <a href="{{ url_for('index') }}" class="block w-full text-center text-blue-500 mt-2">
+                Geri Dön
+            </a>
+        </form>
+    </div>
+</body>
+</html>

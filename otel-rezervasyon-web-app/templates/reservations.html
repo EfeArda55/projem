@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezervasyonlar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="container mx-auto bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-6 text-center">Rezervasyonlar</h1>
+
+        <table class="w-full border-collapse">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="border p-2">Müşteri Adı</th>
+                    <th class="border p-2">Email</th>
+                    <th class="border p-2">Giriş Tarihi</th>
+                    <th class="border p-2">Çıkış Tarihi</th>
+                    <th class="border p-2">Oda Sayısı</th>
+                    <th class="border p-2">Kapasite</th>
+                    <th class="border p-2">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reservation in reservations %}
+                <tr>
+                    <td class="border p-2">{{ reservation.customer.name }}</td>
+                    <td class="border p-2">{{ reservation.customer.email }}</td>
+                    <td class="border p-2">{{ reservation.check_in.strftime('%Y-%m-%d') }}</td>
+                    <td class="border p-2">{{ reservation.check_out.strftime('%Y-%m-%d') }}</td>
+                    <td class="border p-2">{{ reservation.room_count }}</td>
+                    <td class="border p-2">{{ reservation.capacity }}</td>
+                    <td class="border p-2">
+                        <form method="POST" action="{{ url_for('update_reservation', reservation_id=reservation._id) }}" class="inline">
+                            <button type="submit" class="bg-blue-500 text-white px-2 py-1 rounded mr-2">
+                                Düzenle
+                            </button>
+                        </form>
+                        <form method="POST" action="{{ url_for('cancel_reservation', reservation_id=reservation._id) }}" class="inline">
+                            <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded">
+                                İptal
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('index') }}" class="text-blue-500">Geri Dön</a>
+        </div>
+    </div>
+</body>
+</html>

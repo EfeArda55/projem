@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezervasyon Güncelleme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="container mx-auto max-w-md bg-white p-6 rounded shadow">
+        <h1 class="text-2xl font-bold mb-6 text-center">Rezervasyon Güncelleme</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="mb-4 p-4 {{ 'bg-green-200' if category == 'success' else 'bg-red-200' }} rounded">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" class="space-y-4">
+            <div>
+                <label class="block mb-2">Giriş Tarihi</label>
+                <input type="date" name="check_in" value="{{ reservation.check_in.strftime('%Y-%m-%d') }}" required class="w-full p-2 border rounded">
+            </div>
+            <div>
+                <label class="block mb-2">Çıkış Tarihi</label>
+                <input type="date" name="check_out" value="{{ reservation.check_out.strftime('%Y-%m-%d') }}" required class="w-full p-2 border rounded">
+            </div>
+            <div>
+                <label class="block mb-2">Oda Sayısı</label>
+                <input type="number" name="room_count" min="1" max="5" value="{{ reservation.room_count }}" required class="w-full p-2 border rounded">
+            </div>
+            <div>
+                <label class="block mb-2">Kapasite</label>
+                <input type="number" name="capacity" min="1" max="4" value="{{ reservation.capacity }}" required class="w-full p-2 border rounded">
+            </div>
+            <button type="submit" class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">
+                Güncelle
+            </button>
+            <a href="{{ url_for('list_reservations') }}" class="block w-full text-center text-blue-500 mt-2">
+                Geri Dön
+            </a>
+        </form>
+    </div>
+</body>
+</html>
