@@ -22,6 +22,8 @@ def index():                                   # ana sayfa yönlendirmesi
 
 
 
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
