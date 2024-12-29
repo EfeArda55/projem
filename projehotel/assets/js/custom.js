@@ -23,21 +23,27 @@
 	})
 
 	$('.owl-banner').owlCarousel({
-	  center: true,
-      items:1,
-      loop:true,
-      nav: true,
-	  dots:true,
-	  navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-      margin:30,
-      responsive:{
-        992:{
-            items:1
-        },
-		1200:{
-			items:1
+	  items: 1,
+	  loop: true,
+	  dots: true,
+	  nav: true,
+	  autoplay: true,
+	  autoplayTimeout: 2000,
+	  autoplayHoverPause: true,
+	  slideTransition: 'linear',
+	  navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+	  margin: 0,
+	  responsive: {
+		0: {
+		  items: 1
+		},
+		600: {
+		  items: 1
+		},
+		1000: {
+		  items: 1
 		}
-      }
+	  }
 	});
 
 	var width = $(window).width();

@@ -222,10 +222,13 @@ Pre-loader Style
   bottom: 0;
   background-color: rgba(0,0,0,0.99);
   display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   opacity: 1;
   visibility: visible;
@@ -740,7 +743,7 @@ Banner Style
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 220px 20% 320px 20%;
+  padding: 150px 10% 250px 10%;
   margin-top: 0px;
 }
 
@@ -773,11 +776,11 @@ Banner Style
 }
 
 .main-banner .item h2 {
-  font-size: 62px;
+  font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
-  line-height: 72px;
+  line-height: 50px;
   width: 50%;
   margin-bottom: 0px;
 }
@@ -1123,11 +1126,11 @@ Best Deal Style
 }
 
 .best-deal .info-table ul li span {
+  display: block;
+  float: right;
   font-size: 20px;
   color: #1e1e1e;
   font-weight: 700;
-  float: right;
-  display: inline-block;
 }
 
 .best-deal .tabs-content {
@@ -1202,11 +1205,10 @@ Properties Style
 }
 
 .properties .item h6 {
+  display: block;
+  float: right;
   font-size: 20px;
   color: #f35525;
-  margin-top: 6px;
-  display: inline-block;
-  float: right;
   margin-top: 30px;
 }
 
@@ -1825,4 +1827,66 @@ body {
   .contact-page .section-heading {
     margin-right: 100px;
   }
+}
+
+/* Flexbox düzeltmeleri */
+.featured .info-table ul li,
+.properties .item,
+.contact-content .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* Genel performans iyileştirmeleri */
+.header-area,
+.main-banner,
+.featured,
+.properties,
+.contact {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Transition düzeltmeleri */
+.icon-button a,
+.main-button a,
+.properties ul.properties-filter li a {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Performans optimizasyonları */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sayfa yükleme performansı için kritik CSS */
+.critical-styles {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 5000px;
+}
+
+/* Görsel optimizasyonu için lazy loading desteği */
+img.lazy {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+img.lazy.loaded {
+  opacity: 1;
+}
+
+/* Animasyon performansı iyileştirmeleri */
+.animated-element {
+  will-change: transform;
+  transform: translateZ(0);
 }

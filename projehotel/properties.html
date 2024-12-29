@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Villa Agency - Property Listing by TemplateMo</title>
+    <title>Otel Rezervasyon - Odalarımız</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,6 +25,15 @@ TemplateMo 591 villa agency
 https://templatemo.com/tm-591-villa-agency
 
 -->
+
+    <!-- SEO optimizasyonu -->
+    <meta name="keywords" content="otel, konaklama, lüks odalar">
+    <link rel="canonical" href="https://yoursite.com/properties">
+
+    <!-- Filtreleme sistemi optimizasyonu -->
+    <div class="properties-filter" data-aos="fade-up">
+      <!-- Filtreler -->
+    </div>
   </head>
 
 <body>
@@ -98,7 +107,8 @@ https://templatemo.com/tm-591-villa-agency
       <div class="row">
         <div class="col-lg-12">
           <span class="breadcrumb"><a href="#">Menü</a> / Odalar</span>
-          <h3>Odalar</h3>
+          <h1>Odalarımız</h1>
+          <h2>Oda Tipleri</h2>
         </div>
       </div>
     </div>
@@ -106,18 +116,24 @@ https://templatemo.com/tm-591-villa-agency
 
   <div class="section Odalar">
     <div class="container">
+      <img src="assets/images/property-01.jpg" alt="Lüks Oda Görünümü">
+      <label for="filter">Fiyata Göre Filtrele:</label>
+      <select id="filter" name="filter">
+          <option value="low">En Düşük Fiyat</option>
+          <option value="high">En Yüksek Fiyat</option>
+      </select>
       <ul class="Odalar-filter">
         <li>
-          <a class="is_active" href="#!" data-filter="*">Show All</a>
+          <a class="is_active" href="#!" data-filter="*">Tümünü Göster</a>
         </li>
         <li>
-          <a href="#!" data-filter=".adv">Apartment</a>
+          <a href="#!" data-filter=".adv">Daire</a>
         </li>
         <li>
-          <a href="#!" data-filter=".str">Villa House</a>
+          <a href="#!" data-filter=".str">Villa</a>
         </li>
         <li>
-          <a href="#!" data-filter=".rac">Penthouse</a>
+          <a href="#!" data-filter=".rac">Çatı Katı</a>
         </li>
       </ul>
       <div class="row Odalar-box">
@@ -125,17 +141,17 @@ https://templatemo.com/tm-591-villa-agency
           <div class="item">
             <a href="property-details.html"><img src="assets/images/property-01.jpg" alt=""></a>
             <span class="category">Lüks Villa</span>
-            <h6>$2.264.000</h6>
+            <h6>₺2.264.000</h6>
             <h4><a href="property-details.html">18 Old Street Miami, OR 97219</a></h4>
             <ul>
-              <li>Bedrooms: <span>8</span></li>
-              <li>Bathrooms: <span>8</span></li>
-              <li>Area: <span>545m2</span></li>
-              <li>Floor: <span>3</span></li>
-              <li>Parking: <span>6 spots</span></li>
+              <li>Yatak Odası: <span>8</span></li>
+              <li>Banyo: <span>8</span></li>
+              <li>Alan: <span>545m2</span></li>
+              <li>Kat: <span>3</span></li>
+              <li>Otopark: <span>6 araçlık</span></li>
             </ul>
             <div class="main-button">
-              <a href="property-details.html">Schedule a visit</a>
+              <a href="property-details.html">Ziyaret Planla</a>
             </div>
           </div>
         </div>
@@ -143,7 +159,7 @@ https://templatemo.com/tm-591-villa-agency
           <div class="item">
             <a href="property-details.html"><img src="assets/images/property-02.jpg" alt=""></a>
             <span class="category">Lüks Villa</span>
-            <h6>$1.180.000</h6>
+            <h6>₺1.180.000</h6>
             <h4><a href="property-details.html">54 New Street Florida, OR 27001</a></h4>
             <ul>
               <li>Bedrooms: <span>6</span></li>
@@ -161,7 +177,7 @@ https://templatemo.com/tm-591-villa-agency
           <div class="item">
             <a href="property-details.html"><img src="assets/images/property-03.jpg" alt=""></a>
             <span class="category">Lüks Villa</span>
-            <h6>$1.460.000</h6>
+            <h6>₺1.460.000</h6>
             <h4><a href="property-details.html">26 Mid Street Portland, OR 38540</a></h4>
             <ul>
               <li>Bedrooms: <span>5</span></li>
@@ -178,8 +194,8 @@ https://templatemo.com/tm-591-villa-agency
         <div class="col-lg-4 col-md-6 align-self-center mb-30 Odalar-items col-md-6 str">
           <div class="item">
             <a href="property-details.html"><img src="assets/images/property-04.jpg" alt=""></a>
-            <span class="category">Apartment</span>
-            <h6>$584.500</h6>
+            <span class="category">Daire</span>
+            <h6>₺584.500</h6>
             <h4><a href="property-details.html">12 Hope Street Portland, OR 12650</a></h4>
             <ul>
               <li>Bedrooms: <span>4</span></li>
@@ -197,7 +213,7 @@ https://templatemo.com/tm-591-villa-agency
           <div class="item">
             <a href="property-details.html"><img src="assets/images/property-05.jpg" alt=""></a>
             <span class="category">Penthouse</span>
-            <h6>$925.600</h6>
+            <h6>₺925.600</h6>
             <h4><a href="property-details.html">34 Hope Street Portland, OR 42680</a></h4>
             <ul>
               <li>Bedrooms: <span>4</span></li>
@@ -214,8 +230,8 @@ https://templatemo.com/tm-591-villa-agency
         <div class="col-lg-4 col-md-6 align-self-center mb-30 Odalar-items col-md-6 rac adv">
           <div class="item">
             <a href="property-details.html"><img src="assets/images/property-06.jpg" alt=""></a>
-            <span class="category">Modern Condo</span>
-            <h6>$450.000</h6>
+            <span class="category">Modern Daire</span>
+            <h6>₺450.000</h6>
             <h4><a href="property-details.html">22 Hope Street Portland, OR 16540</a></h4>
             <ul>
               <li>Bedrooms: <span>3</span></li>
@@ -233,7 +249,7 @@ https://templatemo.com/tm-591-villa-agency
           <div class="item">
             <a href="property-details.html"><img src="assets/images/property-03.jpg" alt=""></a>
             <span class="category">Lüks Villa</span>
-            <h6>$980.000</h6>
+            <h6>₺980.000</h6>
             <h4><a href="property-details.html">14 Mid Street Miami, OR 36450</a></h4>
             <ul>
               <li>Bedrooms: <span>8</span></li>
@@ -251,7 +267,7 @@ https://templatemo.com/tm-591-villa-agency
           <div class="item">
             <a href="property-details.html"><img src="assets/images/property-02.jpg" alt=""></a>
             <span class="category">Lüks Villa</span>
-            <h6>$1.520.000</h6>
+            <h6>₺1.520.000</h6>
             <h4><a href="property-details.html">26 Old Street Miami, OR 12870</a></h4>
             <ul>
               <li>Bedrooms: <span>12</span></li>
@@ -269,7 +285,7 @@ https://templatemo.com/tm-591-villa-agency
           <div class="item">
             <a href="property-details.html"><img src="assets/images/property-01.jpg" alt=""></a>
             <span class="category">Lüks Villa</span>
-            <h6>$3.145.000</h6>
+            <h6>₺3.145.000</h6>
             <h4><a href="property-details.html">34 New Street Miami, OR 24650</a></h4>
             <ul>
               <li>Bedrooms: <span>10</span></li>
